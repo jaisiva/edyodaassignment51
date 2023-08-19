@@ -126,6 +126,12 @@ Observations
    db PoD also instance created again with different instance ID 
    But it is observed that vote count reduced from  3 to 1. Not sure why it came down from 3 to 1.
 9) Voting App & Results App functionality is not impacted 
+10) when db PoD is stopped using command "kubectl scale deploy db --replicas=0". the pod went into terminating state and deleted from node.
+11) Now I see votes count became zero in results app window. Even though I tried to vote from voting app the count is not incrementing in results app window.
+12) I see voting & result PoD RESTART count is increased by 1. Not sure why ?
+13) I have restarted db PoD using command "kubectl scale deploy db --replicas=1". Then after some time I see vote count is 2 which is previous count.
+    It means when db PoD is stopped or terminated, results window does not vote count. After db PoD restarted only we can see vote count.
+
 
 
 
